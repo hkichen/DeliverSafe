@@ -28,6 +28,6 @@ function geocodeAddress(geocoder, resultsMap) {
 
 function resetMap() {
     $('#reset').on("click", function() {
-        initMap();  
+        console.log("you clicked me!");  
     })
-}
+};
