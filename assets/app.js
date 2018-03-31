@@ -49,9 +49,20 @@ $(document).ready(function() {
         $.ajax({
             url: queryURL,
             method: "GET"
+        // store the retrieved data inside of an object called "response"
           }).then(function(response) {
+        // check the query
+            console.log(queryURL);
+        // check the response
             console.log(response);
+        // create a new row
             createRow(response);
+
+        // add content to HTML (example taken from bujumbura-solved activity- will need to be modified to fit variables and values of current project)
+        $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+        $(".wind").text("Wind Speed: " + response.wind.speed);
+        $(".humidity").text("Humidity: " + response.main.humidity);
+        $(".temp").text("Temperature (F) " + response.main.temp);
           });
     }
 
