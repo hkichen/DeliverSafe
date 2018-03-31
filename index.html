@@ -14,14 +14,16 @@
 
 <body>
     <div class="mapShown">
+        <div class="location">
+            <p id="latLng">This is where the location data should be displayed</p>
+        </div>
         <div id="panel">
-            <input id="address" type="textbox" value="" placeholder="type a city name or address...">
+            <input id="address" type="textbox" value="" placeholder="Type in delivery address...">
             <input id="submit" type="button" value="Geocode">
             <button type="button" id="reset">Reset</button>
         </div>
         <div id="map"></div>
-    </div>
-    
+    </div>    
 </body>
 <tail>
     <script src="assets/app.js"></script>
