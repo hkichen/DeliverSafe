@@ -12,17 +12,18 @@
 
 // VARIABLES ===================================================================================
 
-// global variables
-var crime = 
-var location =
-
+var crime = ;
+var destination = ;
+var currentLocation = ;
+var crimeStats = ;
+var offense = ;
+var offenseDate = ;
+var offenseLoc = [latitude and longitude pulled from search]
 
 // var destCity = [should be pulled from search results... latitude and longitude of destination?]
 // var destLat = [should be pulled from search results... latitude and longitude of destination?]
 // var destLon = [should be pulled from search results... latitude and longitude of destination?]
-// var destCityCrime = 
-    // offense = 
-// var offense = .crimes(type, date, address, lat, lon)
+// .crimes(type, date, address, lat, lon)
 // var lat = 
 // var lon = 
 
