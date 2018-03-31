@@ -58,19 +58,18 @@ $(document).ready(function() {
         // create a new row
             createRow(response);
 
+        // add data to table body
+        var createRow = function(data) {
+            var tBody = $("tbody");
+            var tRow = $("<tr>");
+
         // add content to HTML (example taken from bujumbura-solved activity- will need to be modified to fit variables and values of current project)
         $(".city").html("<h1>" + response.name + " Weather Details</h1>");
         $(".wind").text("Wind Speed: " + response.wind.speed);
         $(".humidity").text("Humidity: " + response.main.humidity);
         $(".temp").text("Temperature (F) " + response.main.temp);
-          });
+        });
     }
-
-    var createRow = function(data) {
-        var tBody = $("tbody");
-        var tRow = $("<tr>");
-
-
 }
 
 // ===============================================================================================
