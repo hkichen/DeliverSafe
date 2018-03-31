@@ -41,11 +41,6 @@ var location =
 
 // FUNCTIONS ===================================================================================
 
-// The createRow function takes data returned by OMDB and appends the table data to the tbody
-var createRow = function(data) {
-    var tBody = $("tbody");
-    var tRow = $("<tr>");
-
 $(document).ready(function() {
 
     var crimeSearch = function(searchSpotCrime) {
@@ -58,6 +53,11 @@ $(document).ready(function() {
             createRow(response);
           });
     }
+
+    var createRow = function(data) {
+        var tBody = $("tbody");
+        var tRow = $("<tr>");
+
 
 }
 
