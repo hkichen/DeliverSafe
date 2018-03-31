@@ -12,6 +12,7 @@
 
 // VARIABLES ===================================================================================
 
+<<<<<<< HEAD
 // global variables
 //var crime = "";
 $(document).ready(function() {
@@ -25,13 +26,20 @@ $(document).ready(function() {
     });
 }
 
+=======
+var crime = ;
+var destination = ;
+var currentLocation = ;
+var crimeStats = ;
+var offense = ;
+var offenseDate = ;
+var offenseLoc = [latitude and longitude pulled from search]
+>>>>>>> 3c63a385cff77965ec4e0eb37b4c7aa7c640b72a
 
 // var destCity = [should be pulled from search results... latitude and longitude of destination?]
 // var destLat = [should be pulled from search results... latitude and longitude of destination?]
 // var destLon = [should be pulled from search results... latitude and longitude of destination?]
-// var destCityCrime = 
-    // offense = 
-// var offense = .crimes(type, date, address, lat, lon)
+// .crimes(type, date, address, lat, lon)
 // var lat = 
 // var lon = 
 
@@ -50,6 +58,7 @@ $(document).ready(function() {
 
 // FUNCTIONS ===================================================================================
 
+<<<<<<< HEAD
 //$(document).ready(function() {
 
    // var crimeSearch = function(searchSpotCrime) {
@@ -67,3 +76,36 @@ $(document).ready(function() {
 //        var tBody = $("tbody");
 //        var tRow = $("<tr>");
 //    }
+=======
+$(document).ready(function() {
+
+    var crimeSearch = function(searchSpotCrime) {
+        var queryURL = ""
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        // store the retrieved data inside of an object called "response"
+          }).then(function(response) {
+        // check the query
+            console.log(queryURL);
+        // check the response
+            console.log(response);
+        // create a new row
+            createRow(response);
+
+        // add data to table body
+        var createRow = function(data) {
+            var tBody = $("tbody");
+            var tRow = $("<tr>");
+
+        // add content to HTML (example taken from bujumbura-solved activity- will need to be modified to fit variables and values of current project)
+        $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+        $(".wind").text("Wind Speed: " + response.wind.speed);
+        $(".humidity").text("Humidity: " + response.main.humidity);
+        $(".temp").text("Temperature (F) " + response.main.temp);
+        });
+    }
+}
+
+// ===============================================================================================
+>>>>>>> 3c63a385cff77965ec4e0eb37b4c7aa7c640b72a

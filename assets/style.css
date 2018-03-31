@@ -1,0 +1,79 @@
+.jumbotron  {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 30px;
+    background-color: #000000;
+}
+
+#jumbo-logo1    {
+    height: 20%;
+    width: 20%;
+    border-radius: 30px;
+}
+
+#jumbo-logo2   {
+    height: 50%;
+    width: 50%;
+    border-radius: 30px;
+}
+
+.logo1    {
+    display: inline;
+}
+
+.logo2    {
+    display: inline;
+}
+
+p   {
+    text-align: center;
+}
+
+.topcoat-button-bar {
+    width: 100%;
+}
+
+.topcoat-button-bar__button--large  {
+    width: 100%;
+    height: 50px;
+    background-color: #2f2f2f;
+    font-size: 150%;
+    box-shadow: inset 0px 1px 6px 1px;
+    border: none;
+}
+
+body    {
+    background: radial-gradient(circle, white, #f7941e);
+}
+
+.card-header    {
+    background-color: #2f2f2f;
+    color: #c6c8c8
+}
+
+#searchBar  {
+    width: 80%;
+}
+
+#searchButton   {
+    width: 18%;
+    height: 100%;
+    float: right;
+    box-shadow: inset 0px 1px 6px 1px;
+    background-color: #2f2f2f;
+    font-size: 15px;
+    border: none;
+}
+
+footer  {
+    text-align: center;
+}
+
+.card   {
+    background-color: #c6c8c8;
+    border-color: #2f2f2f;
+}
+
+thead {
+    border: none;
+}
