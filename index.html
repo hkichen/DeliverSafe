@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Google Maps APIs</title>
-    <link href="assets/style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>getting location for crime data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
     crossorigin="anonymous"></script>
+    <script src="assets/app.js"></script>
 </head>
-
 <body>
-    <div class="mapShown">
-        <div class="location">
-            <p id="latLng">This is where the location data should be displayed</p>
-        </div>
-        <div id="panel">
-            <input id="address" type="textbox" value="" placeholder="Type in delivery address...">
-            <input id="submit" type="button" value="Geocode">
-            <button type="button" id="reset">Reset</button>
-        </div>
-        <div id="map"></div>
-    </div>    
+    <button type="button" id="getCrime">Get Crime Data!</button>
+    <div class="crimeData">
+        <p id="type">Type of crime: <span id="crimeType"></span></p>
+        <p id="date">Date of Crime: <span id="dateCrime"></span></p>             
+    </div>
+    
 </body>
-<tail>
-    <script src="assets/app2.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiYx21r9sMd6jLLfHnMyuYFb9VT_cDcZc&callback=initMap">
-</script>
-</tail>
-
 </html>
