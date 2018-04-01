@@ -1,3 +1,5 @@
+//Google Map call and functionality
+
 function initMap() {
     var locations = [
         {
@@ -19,22 +21,29 @@ function initMap() {
             lng: -84.396307
         },
     ];
-    
-    //var newCenter = $("#addressInput").val();
+
+    //var locationsMarkerInfo = [
+    //    [locations.name, locations.address, locations.lat, locations.lng, 0],
+    //]
+
+    //later: make this grab a lat:lng when user puts down address -- use geocoding service
+    var newCenter = {lat: 33.761349, lng:-84.389437}
 
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 15,
-		center: new google.maps.LatLng(33.761349, -84.389437),
+		center: newCenter,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
     
 	var infowindow = new google.maps.InfoWindow({});
 	var marker, i;
-    
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var labelIndex = 0;
 	for (i = 0; i < locations.length; i++) {
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(locations[i], locations[i]),
-			map: map
+			map: map,
+            lable: labels[labelIndex++ % labels.length],
         });
 
 		google.maps.event.addListener(marker, 'click', (function (marker, i) {
