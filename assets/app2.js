@@ -14,7 +14,7 @@ function initMap() {
     });
 }
 
-//grab user input of address and then geocodes it
+//grab user input of address and then geocodes it, puts a marker on the map
 function geocodeAddress(geocoder, resultsMap) {
     var address = document.getElementById('address').value;
     geocoder.geocode({'address': address}, function(results, status) {
@@ -24,7 +24,8 @@ function geocodeAddress(geocoder, resultsMap) {
                 map: resultsMap,
                 position: results[0].geometry.location
             });
-            console.log(marker.position.latLng);
+            console.log(marker.position.lat());
+            console.log(marker.position.lng())
         } else {
             console.log('Geocode was not successful for the following reason: ' + status);
         }
