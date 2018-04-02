@@ -1,5 +1,4 @@
-//global variable to store user's address to be used in calling crime data api
-//Google Map call and functionality
+//this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
 function initMap() {
     var newCenter = {lat: 33.761349, lng:-84.389437}
 	var map = new google.maps.Map(document.getElementById('map'), {
@@ -16,7 +15,6 @@ function initMap() {
 }
 
 //grab user input of address and then geocodes it, puts a marker on the map
-var yourAddress;
 function geocodeAddress(geocoder, resultsMap) {
     var address = document.getElementById('address').value;
     geocoder.geocode({'address': address}, function(results, status) {
@@ -31,6 +29,9 @@ function geocodeAddress(geocoder, resultsMap) {
         } else {
             console.log('Geocode was not successful for the following reason: ' + status);
         }
-        yourAddress = {lat: (marker.position.lat()), lng: (marker.position.lng())}
+        function getLatLng() {
+            var latLng = {lat:(marker.position.lat()), lng:(marker.position.lng())};
+        }
     });
 }
+
