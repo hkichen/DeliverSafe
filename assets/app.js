@@ -25,7 +25,7 @@
             "type":"",
             "date":"",
             "address":""
-           },
+           }
         ]";
       
       // convert string to JSON
@@ -40,16 +40,8 @@
               ); //.appendTo('#crimeTableBody');
               console.log($tr.wrap('<p>').html());
           });
-      });
-        
-        // not sure if this is working
-        // function addToTable() {
-        //    var trHTML = '';
-        //    $.each(response, function (i, item) {
-        //        trHTML += '<tr><td>' + crimes.type + '</td><td>' + crimes.date + '</td><td>' + crimes.address + '</td></tr>';
-        //    });
-        //    $('#crimeTableBody').append(trHTML);
-        //    console.log(addToTable);
+        });
+
         }
         
 
