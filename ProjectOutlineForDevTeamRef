@@ -1,0 +1,38 @@
+Project Title
+DeliverSafe
+
+Team Members
+Lina
+Ryan
+Carrie
+
+Touch-Base Schedule
+	Wednesday Skype @ 7
+	Saturday meet in-person after class @ Lina’s (worked from ~2 to 5:15)
+Sunday evening Skype
+Monday Skype @ 7ish
+Wednesday Skype @ 7
+
+Project Description
+App that provides crime and safety data for your area.  Provides Offense (Sex Offender, Robbery, Assault, Homicide), Location, Date and if available Name
+Button, “Around Me” “Near Me” grabs location, lat and long
+Enter destination button which also returns results
+Timeframe – 5 years down to 6 months (will need to test number of results to make sure table doesn’t get too large)
+
+Sketch of Final Product
+(Ryan’s sketch)
+
+APIs to be Used
+Google Maps
+FBI’s Crime Data Explorer
+
+Additional libraries
+Topcoat
+
+Rough Breakdown of Tasks
+(organize by component)
+Lina – Google API
+Ryan – UI
+Carrie – FBI API
+
+
