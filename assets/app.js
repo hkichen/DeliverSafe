@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 // should grab latitude and longitute from search results as the criteria for search of crime api
 
@@ -61,12 +62,40 @@ $(document).ready(function() {
         // create a new row
             createRow(response);
         crimesearch()
+=======
+//This call onyl works if your brownser has the CORS plugin!!
+//ajax call to crime data using a lat and lng
+var place = {
+    lat: 33.775618,
+    lng: -84.396285
+}
 
-        // add data to table body
-        var createRow = function(data) {
-            var tBody = $("tbody");
-            var tRow = $("<tr>");
+var queryURL= "https://api.spotcrime.com/crimes.json?lat=" + place.lat + "&lon=" + place.lng + "&radius=0.02&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com";
 
+$.ajax({
+    url: queryURL,
+    method: 'GET'
+}).then(function(response) {
+    console.log(response.crimes[0]);
+    var crimeLocation = [
+        {
+            lat: response.crimes.lat,
+            lng: response.crimes.lon
+        }
+    ];
+
+//    var createRow = function(data) {
+//        var tBody = $("tbody");
+//        var tRow = $("<tr>");
+//    }
+//    tbody=$("")
+})
+
+//do something with that data
+>>>>>>> 10a368a02c013d1dd27f79246d455d09a130459d
+
+
+<<<<<<< HEAD
             $("#crimeTableHead").append(
                 "<tr><td>" + response.crimes("type", "date", "address") + "</td></tr>"
             )
@@ -76,3 +105,6 @@ $(document).ready(function() {
 }
 
 // ===============================================================================================
+=======
+
+>>>>>>> 10a368a02c013d1dd27f79246d455d09a130459d
