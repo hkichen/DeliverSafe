@@ -11,7 +11,22 @@ $.ajax({
     url: queryURL,
     method: 'GET'
 }).then(function(response) {
-    console.log(response.crimes);
+    console.log(response.crimes[0]);
+    var crimeLocation = [
+        {
+            lat: response.crimes.lat,
+            lng: response.crimes.lon
+        }
+    ];
+
+//    var createRow = function(data) {
+//        var tBody = $("tbody");
+//        var tRow = $("<tr>");
+//    }
+//    tbody=$("")
 })
+
+//do something with that data
+
 
 
