@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 // should grab latitude and longitute from search results as the criteria for search of crime api
 
@@ -13,14 +12,19 @@
 
 // VARIABLES ===================================================================================
 
+// global variables
+//var crime = "";
+$(document).ready(function() {
+    var location = {
+            lat: 33.777,
+            lon: -84.4179
+    };
 
-var crime = ;
-var destination = ;
-var currentLocation = ;
-var crimeStats = ;
-var offense = ;
-var offenseDate = ;
-var offenseLoc = [latitude and longitude pulled from search]
+    $("#getCrime").click(function getLocation(){
+        var crimeurl = "https://api.spotcrime.com/crimes.json?lat=" + location.lat + "&lon=" + location.lon + "&radius=0.02&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com"
+    });
+}
+
 
 // var destCity = [should be pulled from search results... latitude and longitude of destination?]
 // var destLat = [should be pulled from search results... latitude and longitude of destination?]
@@ -44,44 +48,34 @@ var offenseLoc = [latitude and longitude pulled from search]
 
 // FUNCTIONS ===================================================================================
 
+// $(document).ready(function() {
 
-$(document).ready(function() {
-=======
-//This call onyl works if your brownser has the CORS plugin!!
-//ajax call to crime data using a lat and lng
-var place = {
-    lat: 33.775618,
-    lng: -84.396285
-}
+    //var crimeSearch = function(searchSpotCrime) {
+        //var queryURL = ""
+        //$.ajax({
+            //url: queryURL,
+            //method: "GET"
+        // store the retrieved data inside of an object called "response"
+          //}).then(function(response) {
+        // check the query
+            //console.log(queryURL);
+        // check the response
+            //console.log(response);
+        // create a new row
+            //createRow(response);
 
-var queryURL= "https://api.spotcrime.com/crimes.json?lat=" + place.lat + "&lon=" + place.lng + "&radius=0.02&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com";
+        // add data to table body
+        //var createRow = function(data) {
+            //var tBody = $("tbody");
+            //var tRow = $("<tr>");
 
-$.ajax({
-    url: queryURL,
-    method: 'GET'
-}).then(function(response) {
-    console.log(response.crimes[0]);
-    var crimeLocation = [
-        {
-            lat: response.crimes.lat,
-            lng: response.crimes.lon
-        }
-    ];
+        // add content to HTML (example taken from bujumbura-solved activity- will need to be modified to fit variables and values of current project)
+        //$(".city").html("<h1>" + response.name + " Weather Details</h1>");
+        //$(".wind").text("Wind Speed: " + response.wind.speed);
+        //$(".humidity").text("Humidity: " + response.main.humidity);
+        //$(".temp").text("Temperature (F) " + response.main.temp);
+        //});
+    //}
+//}
 
-    //var createRow = function(data) {
-    //    var tBody = $("tbody");
-    //    var tRow = $("<tr>");
-   //}
-   //tbody=$(crimeLocation).
-})
->>>>>>> 1abc726035bda522063c9c80176524af9b4391e7
-
-// cleaner code
-
-//do something with that data
-
-
-<<<<<<< HEAD
 // ===============================================================================================
-=======
->>>>>>> 1abc726035bda522063c9c80176524af9b4391e7
