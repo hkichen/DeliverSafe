@@ -24,7 +24,7 @@
 <div class="row">
     <div class=col-md-12>
             <input type="text" class="topcoat-text-input--large" id="searchBar" value="" placeholder="Address">
-            <button class="topcoat-button" id="searchButton">Search Address</button>
+            <button class="topcoat-button" id="searchButton">Search</button>
     </div>
 </div>
 <br>
@@ -45,7 +45,7 @@
 <br>
 <div class="row">
     <div class="col-md-6">
-        <div class="card">
+        <div class="card" id="mapBox">
             <h4 class="card-header">Location</h4>
             <div class="card-body">
                 <div id="mapShown"></div>
@@ -62,7 +62,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Offense</th>
                             <th scope="col">Date</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Area</th>
                         </tr>
                     </thead>
                     <tbody id="crimeTableBody">
@@ -74,7 +74,9 @@
 </div>
 <br>
 <footer>
-    &copy; Lina Kichen, Ryan McKenzie, Carrie Kordys 2018
+    &copy;2018 Lina Kichen, Ryan McKenzie, Carrie Kordys
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>
