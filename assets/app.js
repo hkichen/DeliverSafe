@@ -19,11 +19,11 @@ $.ajax({
         }
     ];
 
-//    var createRow = function(data) {
-//        var tBody = $("tbody");
-//        var tRow = $("<tr>");
-//    }
-//    tbody=$("")
+    //var createRow = function(data) {
+    //    var tBody = $("tbody");
+    //    var tRow = $("<tr>");
+   //}
+   //tbody=$(crimeLocation).
 })
 
 //do something with that data
