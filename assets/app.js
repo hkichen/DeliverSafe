@@ -12,21 +12,7 @@
 
 // VARIABLES ===================================================================================
 
-<<<<<<< HEAD
-// global variables
-//var crime = "";
-$(document).ready(function() {
-    var location = {
-            lat: 33.777,
-            lon: -84.4179
-    };
 
-    $("#getCrime").click(function getLocation(){
-        var crimeurl = "https://api.spotcrime.com/crimes.json?lat=" + location.lat + "&lon=" + location.lon + "&radius=0.02&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com"
-    });
-}
-
-=======
 var crime = ;
 var destination = ;
 var currentLocation = ;
@@ -34,7 +20,6 @@ var crimeStats = ;
 var offense = ;
 var offenseDate = ;
 var offenseLoc = [latitude and longitude pulled from search]
->>>>>>> 3c63a385cff77965ec4e0eb37b4c7aa7c640b72a
 
 // var destCity = [should be pulled from search results... latitude and longitude of destination?]
 // var destLat = [should be pulled from search results... latitude and longitude of destination?]
@@ -58,25 +43,7 @@ var offenseLoc = [latitude and longitude pulled from search]
 
 // FUNCTIONS ===================================================================================
 
-<<<<<<< HEAD
-//$(document).ready(function() {
 
-   // var crimeSearch = function(searchSpotCrime) {
-  //      var queryURL = ""
- //       $.ajax({
- //           url: queryURL,
-//            method: "GET"
-//          }).then(function(response) {
-//            console.log(response);
-//            createRow(response);
-//          });
-//    }
-
-//    var createRow = function(data) {
-//        var tBody = $("tbody");
-//        var tRow = $("<tr>");
-//    }
-=======
 $(document).ready(function() {
 
     var crimeSearch = function(searchSpotCrime) {
@@ -108,4 +75,3 @@ $(document).ready(function() {
 }
 
 // ===============================================================================================
->>>>>>> 3c63a385cff77965ec4e0eb37b4c7aa7c640b72a
