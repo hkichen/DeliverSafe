@@ -1,20 +1,20 @@
 .jumbotron  {
     margin: 0px;
     padding: 0px;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: #000000;
 }
 
 #jumbo-logo1    {
     height: 20%;
     width: 20%;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 #jumbo-logo2   {
     height: 50%;
     width: 50%;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .logo1    {
@@ -35,9 +35,10 @@ p   {
 
 .topcoat-button-bar__button--large  {
     width: 100%;
-    height: 50px;
+    height: 10%;
     background-color: #2f2f2f;
-    font-size: 150%;
+    font-size: 100%;
+    text-align: center;
     box-shadow: inset 0px 1px 6px 1px;
     border: none;
 }
@@ -61,7 +62,7 @@ body    {
     float: right;
     box-shadow: inset 0px 1px 6px 1px;
     background-color: #2f2f2f;
-    font-size: 15px;
+    font-size: 70%;
     border: none;
 }
 
@@ -76,4 +77,8 @@ footer  {
 
 thead {
     border: none;
+}
+
+#mapBox {
+    margin-bottom: 5%;
 }
