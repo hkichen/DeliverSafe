@@ -23,12 +23,21 @@
             ];
         // test the above function before presentation to make sure we don't need to place a call to the function here
 
+        var response = "[{
+            "type":"",
+            "date":""
+           }
+        ]";
+      
+      // convert string to JSON
+      response = $.parseJSON(response);
+        
         $("#crimeTableBody").append(
-            "<tr><td>" + crimes.type + "</td>" +
-            "<td>" + crimes.date + "</td></tr>"
+            "<tr><td>" + response.crimes.type + "</td>" +
+            "<td>" + response.crimes.date + "</td></tr>"
         );
 
-        /*        var response = "[{
+/*        var response = "[{
             "type":"",
             "date":""
            }
@@ -46,7 +55,6 @@
               console.log($tr.wrap('<p>').html());
           });
         });
-
         }
 */
 
