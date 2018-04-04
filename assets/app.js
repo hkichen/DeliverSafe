@@ -1,4 +1,6 @@
 
+        // gobbledee gook why won't this commit
+        
         //This call only works if your browser has the CORS plugin!!
         //ajax call to crime data using a lat and lng
         var place = {
