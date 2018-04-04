@@ -52,10 +52,14 @@ $.ajax({
             ];
         // test the above function before presentation to make sure we don't need to place a call to the function here
 
-        var response = "[{
+        $("#crimeTableBody").append(
+            "<tr><td>" + crimes.type + "</td>" +
+            "<td>" + crimes.date + "</td></tr>"
+        );
+
+        /*        var response = "[{
             "type":"",
-            "date":"",
-            "address":""
+            "date":""
            }
         ]";
       
@@ -67,13 +71,12 @@ $.ajax({
               var $tr = $('<tr>').append(
                   $('<td>').text(item.type),
                   $('<td>').text(item.date),
-                  $('<td>').text(item.address)
               ); //.appendTo('#crimeTableBody');
               console.log($tr.wrap('<p>').html());
           });
         });
 
         }
-        
+*/
 
 >>>>>>> fbbc85db85b9a9167ee8ade9a00c52d213672624
