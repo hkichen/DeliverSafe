@@ -23,11 +23,11 @@
             ];
         // test the above function before presentation to make sure we don't need to place a call to the function here
 
-        var response = "[{
+        var response = [{
             "type":"",
             "date":""
            }
-        ]";
+        ];
       
       // convert string to JSON
       response = $.parseJSON(response);
