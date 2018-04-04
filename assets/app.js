@@ -1,5 +1,5 @@
 
-        // gobbledee gook why won't this commit
+        // added this to be able to push
         
         //This call only works if your browser has the CORS plugin!!
         //ajax call to crime data using a lat and lng
@@ -37,24 +37,4 @@
             "<td>" + response.crimes.date + "</td></tr>"
         );
 
-/*        var response = "[{
-            "type":"",
-            "date":""
-           }
-        ]";
-      
-      // convert string to JSON
-      response = $.parseJSON(response);
-      
-      $(function() {
-          $.each(response, function(i, item) {
-              var $tr = $('<tr>').append(
-                  $('<td>').text(item.type),
-                  $('<td>').text(item.date),
-              ); //.appendTo('#crimeTableBody');
-              console.log($tr.wrap('<p>').html());
-          });
-        });
-        }
-*/
 
