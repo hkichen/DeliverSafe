@@ -82,3 +82,16 @@ thead {
 #mapBox {
     margin-bottom: 5%;
 }
+
+table tr:nth-child(2)  {
+    counter-reset: rowNumber;
+}
+
+table tr {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    margin-right: 10%;
+}
