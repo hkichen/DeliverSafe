@@ -1,8 +1,9 @@
 
 //this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
+map = null
 function initMap() {
     var newCenter = {lat: 33.761349, lng:-84.389437}
-	var map = new google.maps.Map(document.getElementById('map'), {
+	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 15,
 		center: newCenter,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -46,8 +47,12 @@ function geocodeAddress(geocoder, resultsMap, address) {
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
                     var crimePlace = response.crimes[i].address;
-                    var crimeLocation = [{lat: response.crimes[i].lat, lng: response.crimes[i].lon}];
-
+                    var crimeLocation = {lat: response.crimes[i].lat, lng: response.crimes[i].lon};
+                    marker = new google.maps.Marker({
+                        position: crimeLocation,
+                        title: crimeType,
+                        map: map
+                    })
                     //append variables to table, by making new rows for each object
                     $("#crimeTableBody").append(
                         "<tr><td></td>" + 
