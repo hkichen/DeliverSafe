@@ -18,4 +18,28 @@ jquery cdn:
 API key for geocoding: AIzaSyDhyViOJ8VEeLmwuCuyzmXtrw-S6PX4bNY
 url: https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
 
+PROJECT TITLE
+DeliverSafe
+
+TEAM MEMBERS
+Lina Kichen
+Ryan McKenzie
+Carrie Kordys
+
+PROJECT DESCRIPTION
+App that provides crime and safety data for delivery area when driver enters destination.  Provides 10 most recent offenses, date of offense, and area in a table, as well as displays the areas as pins on map.
+
+APIs USED
+Google Maps
+SpotCrime API
+
+ADDITIONAL LIBRARIES
+Topcoat
+
+ROUGH BREAKDOWN OF TASKS
+(organized by component)
+Lina – Google API
+Ryan – UI
+Carrie – SpotCrime API
+
 
