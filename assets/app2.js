@@ -15,6 +15,10 @@ function initMap() {
     });
 }
 
+//write a reset values function//clears table//clears map
+//$('#reset').click(function() {
+//})
+
 //grab user input of address and then geocodes it, puts a marker on the map
 function geocodeAddress(geocoder, resultsMap, address) {
     geocoder.geocode({'address': address}, function(results, status) {
