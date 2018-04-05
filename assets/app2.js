@@ -1,7 +1,7 @@
 //this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
 function initMap() {
     var newCenter = {lat: 33.761349, lng:-84.389437}
-	var map = new google.maps.Map(document.getElementById('map'), {
+	var map = new google.maps.Map(document.getElementById('mapShown'), {
 		zoom: 15,
 		center: newCenter,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
