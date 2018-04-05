@@ -1,24 +1,23 @@
 
 //this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
-map = null
+map = null;
+markers = [];
+geocoder = null;
+
+document.getElementById('submit').addEventListener('click', function() {
+    var address = document.getElementById('address').value
+    geocodeAddress(geocoder, map, address);
+});
+
 function initMap() {
-    var newCenter = {lat: 33.761349, lng:-84.389437}
+    var newCenter = address;
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 15,
 		center: newCenter,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    
-    var geocoder = new google.maps.Geocoder();
-    var address = document.getElementById('address').value;    
-    document.getElementById('submit').addEventListener('click', function() {
-        geocodeAddress(geocoder, map, address);
-    });
+    geocoder = new google.maps.Geocoder(); 
 }
-
-//write a reset values function//clears table//clears map
-//$('#reset').click(function() {
-//})
 
 //grab user input of address and then geocodes it, puts a marker on the map
 function geocodeAddress(geocoder, resultsMap, address) {
@@ -27,8 +26,11 @@ function geocodeAddress(geocoder, resultsMap, address) {
             resultsMap.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: resultsMap,
-                position: results[0].geometry.location
+                //center: address,
+                position: results[0].geometry.location,
+                title: "Your Location"
             });
+            console.log(address);
             console.log('lat: ' + marker.position.lat() + ', ' + 'lng: ' + marker.position.lng());
             
             //grab the latlng and set it to place variable
@@ -36,23 +38,27 @@ function geocodeAddress(geocoder, resultsMap, address) {
             var place = {lat: marker.position.lat(), lng: marker.position.lng()};
             console.log(place);
             var queryURL= "https://api.spotcrime.com/crimes.json?lat=" + place.lat + "&lon=" + place.lng + "&radius=0.02&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com";
-        
+            
             $.ajax({
                 url: queryURL,
                 method: 'GET'
             }).then(function(response) {
                 //console.log(response.crimes[0]);
                 //grabs first 10 most recent crimes and adds their type, time, and area to table
+                markers = [];
                 for(i=0; i < 10; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
                     var crimePlace = response.crimes[i].address;
                     var crimeLocation = {lat: response.crimes[i].lat, lng: response.crimes[i].lon};
+                    
+                    //make a marker on map of each crime location
                     marker = new google.maps.Marker({
                         position: crimeLocation,
                         title: crimeType,
                         map: map
                     })
+                    markers.push(marker);
                     //append variables to table, by making new rows for each object
                     $("#crimeTableBody").append(
                         "<tr><td></td>" + 
@@ -65,6 +71,25 @@ function geocodeAddress(geocoder, resultsMap, address) {
         }
     });
 }
+
+//write a reset values function//clears table//clears map
+var map = null;
+$(document).ready(function() {
+    $('map').each(function() {
+        // create map
+        map = new_map($(this));
+    });
+    $('#reset').click(function() {
+        //clear all markers related to crime data
+        for (var i = 0; i < markers.length; i++) {
+            var marker = markers[i];
+            marker.setMap(null)
+        }
+        $("#crimeTableBody").empty();
+       // geocodeAddress(null);
+    })
+});
+
 
 
 
