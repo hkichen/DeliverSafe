@@ -1,7 +1,8 @@
+
 //this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
 function initMap() {
     var newCenter = {lat: 33.761349, lng:-84.389437}
-	var map = new google.maps.Map(document.getElementById('mapShown'), {
+	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 15,
 		center: newCenter,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -14,7 +15,6 @@ function initMap() {
     });
 }
 
-var latLng;
 //grab user input of address and then geocodes it, puts a marker on the map
 function geocodeAddress(geocoder, resultsMap, address) {
     geocoder.geocode({'address': address}, function(results, status) {
@@ -25,6 +25,9 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 position: results[0].geometry.location
             });
             console.log('lat: ' + marker.position.lat() + ', ' + 'lng: ' + marker.position.lng());
+            
+            //grab the latlng and set it to place variable
+            //use place variable as parameter in ajax call
             var place = {lat: marker.position.lat(), lng: marker.position.lng()};
             console.log(place);
             var queryURL= "https://api.spotcrime.com/crimes.json?lat=" + place.lat + "&lon=" + place.lng + "&radius=0.02&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com";
@@ -34,7 +37,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 method: 'GET'
             }).then(function(response) {
                 //console.log(response.crimes[0]);
-                //grab specific properties in array
+                //grabs first 10 most recent crimes and adds their type, time, and area to table
                 for(i=0; i < 10; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
@@ -48,11 +51,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         "<td>" + crimeTime + "</td>" +
                         "<td>" + crimePlace + "</td></tr>"
                     );
-
                 }
-                console.log(crimeType);
-                console.log(crimeTime);
-                console.log(crimeLocation);
             });
         }
     });

@@ -1,19 +1,9 @@
-<<<<<<< HEAD
 
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
-.mapShown{
-    height: 400px;
-    width: 450px
-}
 #map {
-    height: 100%;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
+    height: 400px;
+    width: 100%;
 }
     
 #address {
@@ -23,7 +13,6 @@ html, body {
 .location {
     z-index: 1000;
 }
-=======
 .jumbotron  {
     margin: 0px;
     padding: 0px;
@@ -108,4 +97,3 @@ thead {
 #mapBox {
     margin-bottom: 5%;
 }
->>>>>>> origin

@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>getting location for crime data</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.js"
-    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-    crossorigin="anonymous"></script>
-    <script src="assets/app.js"></script>
-</head>
-<body>
-    <button type="button" id="getCrime">Get Crime Data!</button>
-    <div class="crimeData">
-        <p id="type">Type of crime: <span id="crimeType"></span></p>
-        <p id="date">Date of Crime: <span id="dateCrime"></span></p>             
-    </div>
-    
-=======
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,84 +12,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="container">
-    <div class="jumbotron">
-        <div class="logo1">
-            <img src="images/app-logo3.jpg" id="jumbo-logo1">
-        </div>
-        <div class="logo2">
-            <img src="images/main-logo4.jpg" id="jumbo-logo2">
-        </div>
-    </div>
-<br>
-<div class="row">
-    <div class=col-md-12>
-            <input type="text" class="topcoat-text-input--large" id="searchBar" value="" placeholder="Address">
-            <button class="topcoat-button" id="searchButton">Search</button>
-    </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-md-12">
-        <center>
-        <div class="topcoat-button-bar">
-            <div class="topcoat-button-bar__item">
-                <button class="topcoat-button-bar__button--large" id="getLocation">Show Current Location</button>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="logo1">
+                <img src="images/app-logo3.jpg" id="jumbo-logo1">
             </div>
-            <div class="topcoat-button-bar__item">
-                <button class="topcoat-button-bar__button--large" id="getCrime">Show Crime Stats</button>
+            
+            <div class="logo2">
+                <img src="images/main-logo4.jpg" id="jumbo-logo2">
             </div>
         </div>
-        </center>
-    </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-md-6">
-        <div class="card" id="mapBox">
-            <h4 class="card-header">Location</h4>
-            <div class="card-body">
-                <div id="mapShown"></div>
+        
+        <br>
+        
+        <div class="row">
+            <div class=col-md-12>
+                <input id="address" type="textbox" value="Atlanta, GA">
+                <input id="submit" type="button" value="Geocode">
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card">
-            <h4 class="card-header">Crime Data</h4>
-            <div class="card-body">
-                <table class="table" id="crimeTableHead">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Offense</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Area</th>
-                        </tr>
-                    </thead>
-                    <tbody id="crimeTableBody">
-                    </tbody>
-                </table>
+        
+        <br>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" id="mapBox">
+                    <h4 class="card-header">Location</h4>
+                    <div class="card-body">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <h4 class="card-header">Crime Data</h4>
+                    <div class="card-body">
+                        <table class="table" id="crimeTableHead">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Offense</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Area</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crimeTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<br>
-<footer>
-    &copy;2018 Lina Kichen, Ryan McKenzie, Carrie Kordys
-</footer>
-<<<<<<< HEAD
-
-=======
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/app.js"></script>
-<<<<<<< HEAD
->>>>>>> origin
-=======
->>>>>>> 7a0c42a5d69457d89c70db2b559e3a74400d98a6
->>>>>>> f53cc3b2692351593a63f8c39a160797d7f1b2b3
+    <footer>
+        &copy; Lina Kichen, Ryan McKenzie, Carrie Kordys 2018
+    </footer>
 </body>
 <tail>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='assets/app.js'></script>
+    <script src="assets/app2.js"></script>
+    <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiYx21r9sMd6jLLfHnMyuYFb9VT_cDcZc&callback=initMap"></script>
 </tail>
 </html>
