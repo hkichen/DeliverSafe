@@ -4,15 +4,16 @@ map = null;
 markers = [];
 geocoder = null;
 
+//grabs user input address and runs geocodeAddress
 document.getElementById('submit').addEventListener('click', function() {
     var address = document.getElementById('address').value
     geocodeAddress(geocoder, map, address);
 });
 
 function initMap() {
-    var newCenter = address;
-	map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 15,
+    var newCenter = {lat: 33.775618, lng: -84.396285};
+    map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 14,
 		center: newCenter,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
     });
