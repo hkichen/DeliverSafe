@@ -1,8 +1,9 @@
 
 //this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
-map = null;
-markers = [];
-geocoder = null;
+var map = null;
+var marker = null;
+var markers = [];
+var geocoder = null;
 
 //grabs user input address and runs geocodeAddress
 document.getElementById('submit').addEventListener('click', function() {
@@ -92,6 +93,7 @@ $(document).ready(function() {
         }
         //clear markers and table
         markers = [];
+        marker = null;
         $("#crimeTableBody").empty();
         //run initial map
         initMap();
