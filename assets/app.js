@@ -73,13 +73,14 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         "<td>" + crimeTime + "</td>" +
                         "<td>" + crimePlace + "</td></tr>"
                     );
-                    if (crimeNumber <= 2) {
-                        console.log("this area is pretty safe");
-                    }else if (crimeNumber <= 5) {
-                        console.log("Be cautious in this area");
-                    }else if (crimeNumber > 5) {
-                        console.log("This area has high crime activity");
-                    }
+                }
+                if (crimeNumber <= 2) {
+                    console.log("this area is pretty safe");
+                    $('#rating').text("This area is pretty chill");
+                }else if (crimeNumber <= 5) {
+                    console.log("Be cautious in this area");
+                }else if (crimeNumber > 5) {
+                    console.log("This area has high crime activity");
                 }
             });
         }
@@ -106,6 +107,7 @@ $(document).ready(function() {
         //run initial map
         initMap();
         $('#address').val('');
+        $('#rating').empty();
     })
 });
 
