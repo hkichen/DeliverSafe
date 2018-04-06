@@ -1,8 +1,9 @@
 
 //this shows initial mapp on loading of page, listens for geocodeAddress() and runs on click
-map = null;
-markers = [];
-geocoder = null;
+var map = null;
+var marker = null;
+var markers = [];
+var geocoder = null;
 
 
 $("#resultBox").hide();
@@ -58,6 +59,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 console.log(response.crimes);
                 //grabs all crimes, but only marks those within the radius
                 markers = [];
+<<<<<<< HEAD
 
                 if (markers = 9, 10)
                     {   $("#bigSmiley").hide();
@@ -87,6 +89,10 @@ function geocodeAddress(geocoder, resultsMap, address) {
                     $("#worrFace").hide();
                 };
             
+=======
+                var crimeNumber = response.crimes.length;
+                console.log(crimeNumber);
+>>>>>>> 198fa21a6586e99d69af2ae5e1f2ebe4bf28a062
                 for(i=0; i < response.crimes.length; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
@@ -108,6 +114,14 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         "<td>" + crimePlace + "</td></tr>"
                     );
                 }
+                if (crimeNumber <= 2) {
+                    console.log("this area is pretty safe");
+                    $('#rating').text("This area is pretty chill");
+                }else if (crimeNumber <= 5) {
+                    console.log("Be cautious in this area");
+                }else if (crimeNumber > 5) {
+                    console.log("This area has high crime activity");
+                }
             });
         }
     });
@@ -128,10 +142,12 @@ $(document).ready(function() {
         }
         //clear markers and table
         markers = [];
+        marker = null;
         $("#crimeTableBody").empty();
         //run initial map
         initMap();
         $('#address').val('');
+        $('#rating').empty();
     })
 });
 
