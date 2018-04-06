@@ -27,9 +27,20 @@
         
         <div class="row">
             <div class=col-md-12>
-                <input id="address" type="textbox" value="Georgia Tech" />
-                <input id="submit" type="button" value="Geocode" />
-                <input id="reset" type="button" value="Reset" />
+                    <input type="text" id="address"class="topcoat-text-input--large" value="Georgia Tech" placeholder="Address">
+            </div>
+
+            <div class="col-md-12">
+                <center>
+                    <div class="topcoat-button-bar">
+                      <div class="topcoat-button-bar__item">
+                        <button class="topcoat-button-bar__button--large" id="submit" value="Geocode">Search</button>
+                      </div>
+                      <div class="topcoat-button-bar__item">
+                        <button class="topcoat-button-bar__button--large" id="reset" value="Reset">Reset</button>
+                      </div>
+                    </div>
+                </center>
             </div>
         </div>
         
@@ -45,10 +56,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" id="resultBox">
+                    <h4 class="card-header">DS Rating</h4>
+                    <div class="card-body">
+                        <div id="results">
+                            <p id="safety">Safety face:
+                                            <img src="images/CrimeGood.png" alt="Big Smiley" class="resultsFace" id="bigSmiley">
+                                            <img src="images/CrimeDangerous.png" alt="Terrified Emoji" class="resultsFace"  id="terrFace">
+                                            <img src="images/CrimeNotBad.png" alt="Slightly Worried Emoji" class="resultsFace" id="worrFace">
+                                            <img src="images/CrimeOk.png" alt="Little Smiley" class="resultsFace" id="smallSmiley">
+                            </p>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-lg-12">
-                <div class="card">
+                <div class="card" id="crimeCard">
                     <h4 class="card-header">Crime Data</h4>
                     <div class="card-body">
                         <table class="table" id="crimeTableHead">

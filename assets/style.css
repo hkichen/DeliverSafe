@@ -5,10 +5,7 @@
     height: 400px;
     width: 100%;
 }
-    
-#address {
-    width: 450px;
-}
+
 
 .location {
     z-index: 1000;
@@ -18,6 +15,7 @@
     padding: 0px;
     border-radius: 10px;
     background-color: #000000;
+    margin-bottom: 1%;
 }
 
 #jumbo-logo1    {
@@ -44,20 +42,6 @@ p   {
     text-align: center;
 }
 
-.topcoat-button-bar {
-    width: 100%;
-}
-
-.topcoat-button-bar__button--large  {
-    width: 100%;
-    height: 10%;
-    background-color: #2f2f2f;
-    font-size: 100%;
-    text-align: center;
-    box-shadow: inset 0px 1px 6px 1px;
-    border: none;
-}
-
 body    {
     background: radial-gradient(circle, white, #f7941e);
 }
@@ -65,10 +49,6 @@ body    {
 .card-header    {
     background-color: #2f2f2f;
     color: #c6c8c8
-}
-
-#searchBar  {
-    width: 80%;
 }
 
 #searchButton   {
@@ -95,5 +75,63 @@ thead {
 }
 
 #mapBox {
+    margin-bottom: 5%;
+}
+
+table tr:nth-child(2)  {
+    counter-reset: rowNumber;
+}
+
+table tr {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    margin-right: 10%;
+}
+
+.resultsFace    {
+    height: 15%;
+    width: 15%;
+}
+
+#address  {
+    width: 100%;
+    margin-bottom: 5%;
+    font-size: 100%;
+}
+
+.topcoat-text-input--large   {
+    border-radius: 10px;
+}
+
+.topcoat-button-bar   {
+    width: 100%;
+}
+
+#submit {
+    width: 100%;
+}
+
+#reset  {
+    width: 100%;
+}
+
+.topcoat-button-bar__button--large  {
+    width: 100%;
+    height: 10%;
+    background-color: #2f2f2f;
+    font-size: 100%;
+    text-align: center;
+    box-shadow: inset 0px 1px 6px 1px;
+    border: none;
+}
+
+#resultBox  {
+    margin-bottom: 5%;
+}
+
+#crimeCard  {
     margin-bottom: 5%;
 }

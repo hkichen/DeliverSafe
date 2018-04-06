@@ -4,8 +4,16 @@ map = null;
 markers = [];
 geocoder = null;
 
+
+$("#resultBox").hide();
+$("#crimeCard").hide();
+
 //grabs user input address and runs geocodeAddress
 document.getElementById('submit').addEventListener('click', function() {
+
+    $("#crimeCard").show();
+    $("#resultBox").show();
+
     markers = [];
     $("#crimeTableBody").empty();
     var address = document.getElementById('address').value
@@ -50,7 +58,35 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 console.log(response.crimes);
                 //grabs all crimes, but only marks those within the radius
                 markers = [];
+
+                if (markers = 9, 10)
+                    {   $("#bigSmiley").hide();
+                        $("#smallSmiley").hide();
+                        $("#worrFace").hide();
+                        $("#terrFace").show();
+                        };
                 
+                if (markers = 6, 7, 8)  {
+                    $("#bigSmiley").hide();
+                    $("#smallSmiley").hide();
+                    $("#terrFace").hide();
+                    $("#worrFace").show();
+                };
+
+                if (markers = 3, 4, 5)  {
+                    $("#bigSmiley").hide();
+                    $("#smallSmiley").show();
+                    $("#terrFace").hide();
+                    $("#worrFace").hide();
+                };
+
+                if (markers = 0, 1, 2)   {
+                    $("#bigSmiley").show();
+                    $("#smallSmiley").hide();
+                    $("#terrFace").hide();
+                    $("#worrFace").hide();
+                };
+            
                 for(i=0; i < response.crimes.length; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
