@@ -47,6 +47,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 //console.log(response.crimes[0]);
                 //grabs first 10 most recent crimes and adds their type, time, and area to table
                 markers = [];
+
                 for(i=0; i < 10; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
@@ -54,12 +55,10 @@ function geocodeAddress(geocoder, resultsMap, address) {
                     var crimeLocation = {lat: response.crimes[i].lat, lng: response.crimes[i].lon};
                     
                     //make a marker with label on map of each crime location
-                    var labels = ['1','2','3','4','5','6','7','8','9','10'];
-                    var labelIndex = 0;
                     marker = new google.maps.Marker({
                         position: crimeLocation,
                         title: crimeType,
-                        label: labels[labelIndex++ % labels.length],
+                        label: (i+1).toString(),
                         map: map
                     })
                     markers.push(marker);
