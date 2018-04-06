@@ -51,7 +51,8 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 console.log(response.crimes);
                 //grabs all crimes, but only marks those within the radius
                 markers = [];
-                
+                var crimeNumber = response.crimes.length;
+                console.log(crimeNumber);
                 for(i=0; i < response.crimes.length; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
@@ -72,6 +73,13 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         "<td>" + crimeTime + "</td>" +
                         "<td>" + crimePlace + "</td></tr>"
                     );
+                    if (crimeNumber <= 2) {
+                        console.log("this area is pretty safe");
+                    }else if (crimeNumber <= 5) {
+                        console.log("Be cautious in this area");
+                    }else if (crimeNumber > 5) {
+                        console.log("This area has high crime activity");
+                    }
                 }
             });
         }

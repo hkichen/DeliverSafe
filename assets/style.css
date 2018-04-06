@@ -94,6 +94,6 @@ thead {
     border: none;
 }
 
-#mapBox {
-    margin-bottom: 5%;
+#mapBox, #safetyRating {
+    margin-bottom: 3%;
 }
