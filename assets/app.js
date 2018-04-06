@@ -7,6 +7,7 @@ geocoder = null;
 //grabs user input address and runs geocodeAddress
 document.getElementById('submit').addEventListener('click', function() {
     markers = [];
+    $("#crimeTableBody").empty();
     var address = document.getElementById('address').value
     geocodeAddress(geocoder, map, address);
 });
@@ -37,6 +38,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
             
             //grab the latlng and set it to place variable
             //use place variable as parameter in ajax call
+            //grabs crimes within a quarter mile radius of location
             var place = {lat: marker.position.lat(), lng: marker.position.lng()};
             console.log(place);
             var queryURL= "https://api.spotcrime.com/crimes.json?lat=" + place.lat + "&lon=" + place.lng + "&radius=0.005&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com";
@@ -45,8 +47,8 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 url: queryURL,
                 method: 'GET'
             }).then(function(response) {
-                console.log(response.crimes[0]);
-                //grabs first 10 most recent crimes and adds their type, time, and area to table
+                console.log(response.crimes);
+                //grabs all crimes, but only marks those within the radius
                 markers = [];
                 
                 for(i=0; i < response.crimes.length; i++){
@@ -54,7 +56,6 @@ function geocodeAddress(geocoder, resultsMap, address) {
                     var crimeTime = response.crimes[i].date;
                     var crimePlace = response.crimes[i].address;
                     var crimeLocation = {lat: response.crimes[i].lat, lng: response.crimes[i].lon};
-                    
                     //make a marker with label on map of each crime location
                     marker = new google.maps.Marker({
                         position: crimeLocation,
