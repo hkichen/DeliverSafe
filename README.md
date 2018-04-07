@@ -13,9 +13,6 @@ This app was created with safety in mind. After having worked delivery driver po
 - Google Maps Javascript API
 - SpotCrime API
 
-##Screen Captures of Working App
-![alt text](images/screencap1.png)
-
 ##Authors
 - Hoan "Lina" Kichen [hkichen](https://github.com/hkichen)
 - Ryan McKenzie [ryanjm88 ](https://github.com/ryanjm88 )
