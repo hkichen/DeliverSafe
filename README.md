@@ -17,3 +17,6 @@ This app was created with safety in mind. After having worked delivery driver po
 - Hoan "Lina" Kichen [hkichen](https://github.com/hkichen)
 - Ryan McKenzie [ryanjm88 ](https://github.com/ryanjm88 )
 - Carrie Kordys [TheLongDinosaur](https://github.com/TheLongDinosaur)
+
+##Deployment Link
+https://hkichen.github.io/DeliverSafe/
