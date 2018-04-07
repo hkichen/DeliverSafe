@@ -86,12 +86,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 }
                 //conditions to set crime rating
                 if (crimeNumber <= 2) {
-<<<<<<< HEAD
-                    $("#bgimg").css("background-image", "url(images/CrimeGood.png)");
-                    console.log("this area is pretty safe");
-=======
                     //console.log("this area is pretty safe");
->>>>>>> 39dc2476471f9338853393378da776a4b8b404fb
                     $('#rating').text("This area is pretty chill. " + crimeNumber + " crime(s) reported.");
                     $('.img').append('<img id="safe" src="images/safe.png" />');
                     
