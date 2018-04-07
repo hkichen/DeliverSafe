@@ -75,7 +75,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         map: map
                     })
                     markers.push(marker);
-                    
+
                     //append variables to table, by making new rows for each object
                     $("#crimeTableBody").append(
                         "<tr><td></td>" + 
@@ -88,15 +88,18 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 if (crimeNumber <= 2) {
                     console.log("this area is pretty safe");
                     $('#rating').text("This area is pretty chill. " + crimeNumber + " crime(s) reported.");
+                    $('.img').append('<img id="safe" src="images/safe.png" />');
                     
                 }else if (crimeNumber <= 5) {
                     console.log("Be cautious in this area");
                     $('#rating').text("Use caution in this area. " + crimeNumber + " crime(s) reported.");
+                    $('.img').append('<img id="safe" src="images/warning.png" />')
                     
 
                 }else if (crimeNumber > 5) {
                     console.log("This area has high crime activity");
-                    $('#rating').text("This area has high crime activity. " + crimeNumber + " crime(s) reported.");
+                    $('#rating').text("This area has high crime activity. Hide yo kids, hide yo wife! " + crimeNumber + " crime(s) reported.");
+                    $('.img').append('<img id="safe" src="images/sirenLight.png" />')
                 }
             });
         }
@@ -121,6 +124,7 @@ $(document).ready(function() {
         marker = null;
         $("#rating").empty();
         $("#crimeTableBody").empty();
+        $('.img').empty();
         //run initial map
         initMap();
         $('#address').val('');
