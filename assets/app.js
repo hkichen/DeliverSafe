@@ -24,6 +24,11 @@ function initMap() {
     geocoder = new google.maps.Geocoder(); 
 }
 
+var crimeNumber;
+var crimeType;
+var crimeTime;
+var crimePlace;
+var crimeLocation;
 //grab user input of address and then geocodes it, puts a marker on the map
 function geocodeAddress(geocoder, resultsMap, address) {
     geocoder.geocode({'address': address}, function(results, status) {
@@ -50,16 +55,18 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 method: 'GET'
             }).then(function(response) {
                 console.log(response.crimes);
-                //grabs all crimes, but only marks those within the radius
+                //grabs all crimes within the radius
                 markers = [];
-            
-                var crimeNumber = response.crimes.length;
+                
+                //set variable for how many crimes listed
+                crimeNumber = response.crimes.length;
                 console.log(crimeNumber);
+
                 for(i=0; i < response.crimes.length; i++){
-                    var crimeType = response.crimes[i].type;
-                    var crimeTime = response.crimes[i].date;
-                    var crimePlace = response.crimes[i].address;
-                    var crimeLocation = {lat: response.crimes[i].lat, lng: response.crimes[i].lon};
+                    crimeType = response.crimes[i].type;
+                    crimeTime = response.crimes[i].date;
+                    crimePlace = response.crimes[i].address;
+                    crimeLocation = {lat: response.crimes[i].lat, lng: response.crimes[i].lon};
                     //make a marker with label on map of each crime location
                     marker = new google.maps.Marker({
                         position: crimeLocation,
@@ -69,6 +76,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                     })
                     markers.push(marker);
                     //append variables to table, by making new rows for each object
+                    
                     $("#crimeTableBody").append(
                         "<tr><td></td>" + 
                         "<td>" + crimeType + "</td>" +
@@ -112,9 +120,9 @@ $(document).ready(function() {
         markers = [];
         marker = null;
         $("#rating").empty();
+        $('#CrimeTableBody').empty();
         //run initial map
         initMap();
         $('#address').val('');
-        $('#rating').empty();
     })
 });
