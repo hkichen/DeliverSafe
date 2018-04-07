@@ -20,3 +20,12 @@ This app was created with safety in mind. After having worked delivery driver po
 
 ##Deployment Link
 https://hkichen.github.io/DeliverSafe/
+
+## Notes on CORS troubles
+In order to run this version of the app, you will need to download an "allow cross origin" plugin available via this link:
+
+https://chrome.google.com/webstore/search/allow%20cross%20origin?hl=en
+
+The SpotCrime API prevents cross origin calls, and this plugin overrides that security messure. 
+
+For version 2, we plan to build a proxy that can make calls to the API so that users do not have to download anything.
