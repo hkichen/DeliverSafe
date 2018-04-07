@@ -40,27 +40,27 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 position: results[0].geometry.location,
                 title: "Your Location"
             });
-            console.log(address);
-            console.log('lat: ' + marker.position.lat() + ', ' + 'lng: ' + marker.position.lng());
+            //console.log(address);
+            //console.log('lat: ' + marker.position.lat() + ', ' + 'lng: ' + marker.position.lng());
             
             //grab the latlng and set it to place variable
             //use place variable as parameter in ajax call
             //grabs crimes within a quarter mile radius of location
             var place = {lat: marker.position.lat(), lng: marker.position.lng()};
-            console.log(place);
+            //console.log(place);
             var queryURL= "https://api.spotcrime.com/crimes.json?lat=" + place.lat + "&lon=" + place.lng + "&radius=0.005&key=heythisisforpublicspotcrime.comuse-forcommercial-or-research-use-call-877.410.1607-or-email-pyrrhus-at-spotcrime.com";
             
             $.ajax({
                 url: queryURL,
                 method: 'GET'
             }).then(function(response) {
-                console.log(response.crimes);
+                //console.log(response.crimes);
                 //grabs all crimes within the radius
                 markers = [];
                 
                 //set variable for how many crimes listed
                 crimeNumber = response.crimes.length;
-                console.log(crimeNumber);
+                //console.log(crimeNumber);
 
                 for(i=0; i < response.crimes.length; i++){
                     crimeType = response.crimes[i].type;
@@ -75,7 +75,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         map: map
                     })
                     markers.push(marker);
-                    
+
                     //append variables to table, by making new rows for each object
                     $("#crimeTableBody").append(
                         "<tr><td></td>" + 
@@ -86,18 +86,25 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 }
                 //conditions to set crime rating
                 if (crimeNumber <= 2) {
+<<<<<<< HEAD
                     $("#bgimg").css("background-image", "url(images/CrimeGood.png)");
                     console.log("this area is pretty safe");
+=======
+                    //console.log("this area is pretty safe");
+>>>>>>> 39dc2476471f9338853393378da776a4b8b404fb
                     $('#rating').text("This area is pretty chill. " + crimeNumber + " crime(s) reported.");
+                    $('.img').append('<img id="safe" src="images/safe.png" />');
                     
                 }else if (crimeNumber <= 5) {
-                    console.log("Be cautious in this area");
+                    //console.log("Be cautious in this area");
                     $('#rating').text("Use caution in this area. " + crimeNumber + " crime(s) reported.");
+                    $('.img').append('<img id="safe" src="images/warning.png" />')
                     
 
                 }else if (crimeNumber > 5) {
-                    console.log("This area has high crime activity");
-                    $('#rating').text("This area has high crime activity. " + crimeNumber + " crime(s) reported.");
+                    //console.log("This area has high crime activity");
+                    $('#rating').text("This area has high crime activity. Hide yo kids, hide yo wife! " + crimeNumber + " crime(s) reported.");
+                    $('.img').append('<img id="safe" src="images/sirenLight.png" />')
                 }
             });
         }
@@ -122,6 +129,7 @@ $(document).ready(function() {
         marker = null;
         $("#rating").empty();
         $("#crimeTableBody").empty();
+        $('.img').empty();
         //run initial map
         initMap();
         $('#address').val('');
