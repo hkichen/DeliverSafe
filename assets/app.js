@@ -75,8 +75,8 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         map: map
                     })
                     markers.push(marker);
-                    //append variables to table, by making new rows for each object
                     
+                    //append variables to table, by making new rows for each object
                     $("#crimeTableBody").append(
                         "<tr><td></td>" + 
                         "<td>" + crimeType + "</td>" +
@@ -120,7 +120,7 @@ $(document).ready(function() {
         markers = [];
         marker = null;
         $("#rating").empty();
-        $('#CrimeTableBody').empty();
+        $("#crimeTableBody").empty();
         //run initial map
         initMap();
         $('#address').val('');
