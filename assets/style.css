@@ -78,7 +78,7 @@ thead {
     margin-bottom: 3%;
 }
 
-table tr:nth-child(2)  {
+table tr:nth-child(1)  {
     counter-reset: rowNumber;
 }
 
