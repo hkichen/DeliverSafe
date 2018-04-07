@@ -127,6 +127,10 @@ table tr td:first-child::before {
     margin: 0;
 }
 
+.table td{
+    width: 3%;
+}
+
 #buttonRow  {
     display: inline;
 }
