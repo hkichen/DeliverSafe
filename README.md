@@ -7,13 +7,16 @@ If a delivery driver feels unsafe about an address they are being sent to, they 
 
 This app was created with safety in mind. After having worked delivery driver positions, developers for DeliverSafe came up with the idea to allow other delivery drivers to be in the know about possible criminal data for locations they are sent to or may be unfamiliar with. The resulting crime data is generated with the aim of informing, and putting driver safety first.
 
-#Built With
+##Built With
 - TopCoat
 - Bootstrap
 - Google Maps Javascript API
 - SpotCrime API
 
-#Authors
+##Screen Captures of Working App
+![alt text](images/screencap1.png)
+
+##Authors
 - Hoan "Lina" Kichen [hkichen](https://github.com/hkichen)
 - Ryan McKenzie [ryanjm88 ](https://github.com/ryanjm88 )
 - Carrie Kordys [TheLongDinosaur](https://github.com/TheLongDinosaur)
