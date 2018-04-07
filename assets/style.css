@@ -15,7 +15,6 @@
     padding: 0px;
     border-radius: 10px;
     background-color: #000000;
-    margin-bottom: 1%;
 }
 
 #jumbo-logo1    {
@@ -68,6 +67,7 @@ footer  {
 .card   {
     background-color: #c6c8c8;
     border-color: #2f2f2f;
+    margin-bottom: 3%;
 }
 
 thead {
@@ -104,28 +104,35 @@ table tr td:first-child::before {
 
 .topcoat-text-input--large   {
     border-radius: 10px;
-}
-
-.topcoat-button-bar   {
-    width: 100%;
+    height: 80%;
+    margin-bottom: 5%;
 }
 
 #submit {
-    width: 100%;
+    width: 49%;
+    margin: none;
 }
 
 #reset  {
-    width: 100%;
+    width: 49%;
+    margin: none;
 }
 
-.topcoat-button-bar__button--large  {
-    width: 100%;
-    height: 10%;
+.topcoat-button  {
     background-color: #2f2f2f;
     font-size: 100%;
     text-align: center;
     box-shadow: inset 0px 1px 6px 1px;
     border: none;
+    margin: 0;
+}
+
+#buttonRow  {
+    display: inline;
+}
+
+.topcoat-button-bar__item   {
+    height: 80%;
 }
 
 #resultBox  {
