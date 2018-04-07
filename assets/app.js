@@ -5,15 +5,8 @@ var marker = null;
 var markers = [];
 var geocoder = null;
 
-
-$("#resultBox").hide();
-$("#crimeCard").hide();
-
 //grabs user input address and runs geocodeAddress
 document.getElementById('submit').addEventListener('click', function() {
-
-    $("#crimeCard").show();
-    $("#resultBox").show();
 
     markers = [];
     $("#crimeTableBody").empty();
@@ -59,40 +52,9 @@ function geocodeAddress(geocoder, resultsMap, address) {
                 console.log(response.crimes);
                 //grabs all crimes, but only marks those within the radius
                 markers = [];
-<<<<<<< HEAD
-
-                if (markers = 9, 10)
-                    {   $("#bigSmiley").hide();
-                        $("#smallSmiley").hide();
-                        $("#worrFace").hide();
-                        $("#terrFace").show();
-                        };
-                
-                if (markers = 6, 7, 8)  {
-                    $("#bigSmiley").hide();
-                    $("#smallSmiley").hide();
-                    $("#terrFace").hide();
-                    $("#worrFace").show();
-                };
-
-                if (markers = 3, 4, 5)  {
-                    $("#bigSmiley").hide();
-                    $("#smallSmiley").show();
-                    $("#terrFace").hide();
-                    $("#worrFace").hide();
-                };
-
-                if (markers = 0, 1, 2)   {
-                    $("#bigSmiley").show();
-                    $("#smallSmiley").hide();
-                    $("#terrFace").hide();
-                    $("#worrFace").hide();
-                };
             
-=======
                 var crimeNumber = response.crimes.length;
                 console.log(crimeNumber);
->>>>>>> 198fa21a6586e99d69af2ae5e1f2ebe4bf28a062
                 for(i=0; i < response.crimes.length; i++){
                     var crimeType = response.crimes[i].type;
                     var crimeTime = response.crimes[i].date;
@@ -114,20 +76,26 @@ function geocodeAddress(geocoder, resultsMap, address) {
                         "<td>" + crimePlace + "</td></tr>"
                     );
                 }
+                //conditions to set crime rating
                 if (crimeNumber <= 2) {
                     console.log("this area is pretty safe");
-                    $('#rating').text("This area is pretty chill");
+                    $('#rating').text("This area is pretty chill. " + crimeNumber + " crime(s) reported.");
+                    
                 }else if (crimeNumber <= 5) {
                     console.log("Be cautious in this area");
+                    $('#rating').text("Use caution in this area. " + crimeNumber + " crime(s) reported.");
+                    
+
                 }else if (crimeNumber > 5) {
                     console.log("This area has high crime activity");
+                    $('#rating').text("This area has high crime activity. " + crimeNumber + " crime(s) reported.");
                 }
             });
         }
     });
 }
 
-//write a reset values function//clears table//clears map
+//write a reset values function
 var map = null;
 $(document).ready(function() {
     $('map').each(function() {
@@ -143,14 +111,10 @@ $(document).ready(function() {
         //clear markers and table
         markers = [];
         marker = null;
-        $("#crimeTableBody").empty();
+        $("#rating").empty();
         //run initial map
         initMap();
         $('#address').val('');
         $('#rating').empty();
     })
 });
-
-
-
-

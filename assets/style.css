@@ -135,3 +135,7 @@ table tr td:first-child::before {
 #crimeCard  {
     margin-bottom: 5%;
 }
+
+#rating {
+    font-size: 22px;
+}
