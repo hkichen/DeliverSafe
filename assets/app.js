@@ -91,13 +91,13 @@ function geocodeAddress(geocoder, resultsMap, address) {
                     $('#rating').text("This area is pretty chill. " + crimeNumber + " crime(s) reported.");
                     $('.img').append('<img id="safe" src="images/safe.png" />');
                     
-                }else if (crimeNumber <= 5) {
+                }else if (crimeNumber > 2 && crimeNumber <= 5) {
                     //console.log("Be cautious in this area");
                     $('#rating').text("Use caution in this area. " + crimeNumber + " crime(s) reported.");
                     $('.img').append('<img id="safe" src="images/warning.png" />')
                     
 
-                }else if (crimeNumber > 5) {
+                }else if (crimeNumber >= 6) {
                     //console.log("This area has high crime activity");
                     $('#rating').text("This area has high crime activity. Hide yo kids, hide yo wife! " + crimeNumber + " crime(s) reported.");
                     $('.img').append('<img id="safe" src="images/sirenLight.png" />')
@@ -120,7 +120,7 @@ $(document).ready(function() {
             var marker = markers[i];
             marker.setMap(null);
         }
-        //clear markers and table
+        //clear markers,rating, and table
         markers = [];
         marker = null;
         $("#rating").empty();
@@ -132,4 +132,6 @@ $(document).ready(function() {
     })
 });
 
-//
+//Still running into trouble with the rating info showing up sometimes
+//not sure on what instance that the code does include the rating, and when it does not
+//Sometimes it will display the image, but not the rating, sometimes, the rating, and not the image, sometimes both, sometimes neither....
